@@ -1,0 +1,68 @@
+<div class="container-fluid dashboard">
+	<div class="navBar">
+		<app-nav></app-nav>
+	</div>
+	<div class="row">
+		<!-- <div class="sideBar col-md-3">
+			<app-side-bar></app-side-bar>
+		<div class="sideBar-image"></div>
+	</div> -->
+	<div class="col-md-9 main-content" >
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="product-table">
+				<div class="card product-card">
+					<div class="card-header">
+						<span class="card-title"><h4><i class="fa fa-shopping-cart" aria-hidden="true"></i> Your Cart ({{cart.length}})</h4></span>
+					</div>
+					<div class="card-content table-responsive">
+						<table *ngIf='cart?.length > 0; else noProducts' class ="table table-striped">
+							<thead class="thead-inverse">
+								<tr>
+									<th>Sr.No</th>
+									<th>Product Info</th>
+									<th>Name</th>
+									<th>Price</th>
+									<th>Category</th>
+									<th>Quantity</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody >
+								<tr *ngFor="let product of cart; let i = index ">
+									<td>{{i+1}}</td>
+									<td><div class="image-td"><img src="{{product.productImage[0]}}"></div></td>
+									<td>
+										<p><b>{{product.productName}}</b></p>
+										<p class="product-description">{{product.productDescription}}</p>
+										<p><span class="btn btn-success fa fa-star"><b> {{product.rating | number: '1.1-1'}}</b></span></p>
+									</td>
+									<td>{{product.productPrice | currency:"INR" : true}}</td>
+									<td>{{product.productCategory}}</td>
+									<td><input type="number" name="" placeholder="1"></td>
+									<td>
+										<p href="" class="glyphicon glyphicon-trash delete" (click)="onDeleteProduct(product)"></p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="panel-footer col-md-12">
+							<div class="col-md-2">
+								<button routerLink='' class="btn btn-default backToMain"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Continue Shopping</button>
+							</div>
+							<div class="col-md-2 pull-right ">
+								<button  class="btn btn-default checkOutCart" routerLink='/delivery'><i class="fa fa-shopping-cart" aria-hidden="true"></i> Check Out</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<ng-template #noProducts>
+	<h5>No products to show, 
+	add some products</h5>
+</ng-template>

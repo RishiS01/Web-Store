@@ -1,0 +1,203 @@
+li{
+    list-style: none;
+}
+.poster{
+    display: flex;
+    /*margin: 15px;*/
+    height: 360px;
+    /*width: 280px;*/
+    overflow: hidden;
+}
+.image-div{
+    max-height: 100%;
+    max-width: 100%;
+    margin: auto;
+}
+.poster img{
+    height: 300px;
+    max-width: 100%;
+    box-shadow: 5px 7px 9px grey;
+    padding: 0px;
+}
+.dashboard{
+	position: relative;
+    top: 0;
+    /*height: 100vh;*/
+}
+.sideBar-image{
+
+    background-image: url(../../../assets/image/lock.jpg);
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50%;
+    filter: brightness(50%);
+    box-shadow: inset 2000px 0 0 0 rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 1);
+}
+.sideBar{
+   position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 260px;
+    overflow: auto;
+    box-shadow: 6px 2px 12px #9d9d9d;
+}
+.main-content{
+    position: relative;
+    height: 100%;
+    float: right;
+    min-height: 100%;
+    width: calc(100% - 260px);
+}
+.product-image img{
+    max-width: 100%;
+    margin: 0 auto;
+    max-height: 100%;
+}
+
+.image-container{
+    height: 150px;
+    width: 150px;
+    display: grid;
+    margin: 12px;
+    position: relative;
+}
+.product-image{
+    /*height: 100px;*/
+    width: 50px;
+    display: grid;
+    margin: 0 auto;
+}
+.addToCart{
+    background-color: #20bd99;
+    margin-top: 20px;
+    box-shadow: 5px 7px 14px grey;
+}
+.product{
+   display:inline-block;
+   margin: 6px;
+}
+.product-detail{
+    margin-top: 30px;
+    box-shadow: 9px 6px 12px #9d9d9d;
+}
+.product-price{
+    /*position: absolute;*/
+    padding: 20px 0;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    text-align: center;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -o-border-radius: 100%;
+    bottom: 30px;
+    right: 17px;
+    background-color: #f33155!important;
+
+}
+.product-details{
+    float: right;
+}
+.buyItem{
+    background-color: #ef5350;
+    margin-top: 20px;
+    margin-left: 8px;
+    box-shadow: 5px 7px 14px grey;  
+}
+.review-button{
+    padding-left: 0px;
+    margin-top: 6px;
+    color: #3a9c3a;
+}
+.userEmail{
+    color: #078c8c
+}
+.remove{
+    color: red;
+}
+.fa-user{
+    color: grey;
+}
+.user-review{
+    box-shadow: 9px 6px 12px #9d9d9d;
+}
+h5{
+    color: red;
+}
+.navBar{
+   border-bottom: 1px solid #eee;
+  box-shadow: 6px 2px 12px #9d9d9d;
+  color:black;
+}
+.review{
+    color: #504c4c;
+}
+fieldset, label { margin: 0; padding: 0; }
+body{ margin: 20px; }
+h1 { font-size: 1.5em; margin: 10px; }
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+.btn-success{
+    padding: 0 12px;
+}
+.btn-warning{
+    background-color: #ff9f00;
+    padding: 1px 4px;
+    font-size: 11px;
+    
+}
+.rating-font{
+    font-size: 14px;
+    color:#fff;
+    font-weight: 900;
+}
+b{
+    font-size: 16px;
+}
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+.rating > label {
+    color: #a9a8a8;
+    float: right;
+}

@@ -1,0 +1,156 @@
+img{
+    max-width: 50%;
+    margin: 0 auto;
+    /*padding: 10px;*/
+}
+.image-td{
+    max-width: 80px;
+    max-height: 80px;
+}
+.dashboard{
+    position: relative;
+    top: 0;
+    height: 100vh;
+    /*background-color: #eee;*/
+}
+.sideBar-image{
+
+    background-image: url(../../../assets/image/lock.jpg);
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50%;
+    filter: brightness(50%);
+    box-shadow: inset 2000px 0 0 0 rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 1);
+}
+.sideBar{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 260px;
+    overflow: auto;
+    box-shadow: 6px 2px 12px #9d9d9d;
+}
+.card-title{
+    /*height: 100%;
+    width: 100%;*/
+    /*text-align: right;*/
+    display: grid;
+    margin-left: 15px;
+    padding-left: 15px;
+}
+.card-header{
+    margin: -20px 15px 0;
+    border-radius: 3px;
+    position: relative;
+    box-shadow:6px 5px 15px #9d9d9d;
+    top: 0;
+    overflow: hidden;
+    background-color: #ef5350;
+    padding: 15px;
+    color: #fff;
+}
+.card{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin: 25px 0;
+    box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.14);
+    border-radius: 3px;
+    color: rgba(0,0,0, 0.87);
+    background: #fff;
+
+}
+.main-content{
+    position: relative;
+    height: 100%;
+    float: right;
+    min-height: 100%;
+    width: calc(100% - 260px);
+}
+.navBar{
+    color:black;
+}
+.card-content{
+   padding: 15px 20px;
+}
+.table-responsive{
+    min-height: .01%;
+    overflow-x: auto;
+}
+h3, h4{
+    text-align: center;
+    margin: 0px;
+}
+h5{
+    text-align: center;
+    color: red;
+}
+.description{
+    padding: 10px 20px 15px 12px;
+}
+tr td{
+    background-color: #ffffff;
+}
+.edit{
+    color: #42a98d;
+}
+.delete{
+    color: #f44336;
+    margin-left: 12px;
+}
+.product-table{
+    margin-top: 50px;
+    padding: 20px 13px;
+}
+.backToMain{
+    background-color: transparent;
+}
+.panel-footer{
+    background-color: #fff
+}
+.checkOutCart{
+   background-color: #20bd99;
+  color: #fff  
+}
+.product-description{
+    text-overflow: ellipsis;
+    width: 550px;
+    padding-right: 10px ;
+
+}
+input{
+    width: 59px;
+    padding: 2px;
+}
+.navBar{
+   border-bottom: 1px solid #eee;
+  box-shadow: 6px 2px 12px #9d9d9d;
+  color:black;
+}
+button:focus {
+    outline: 0 !important;
+}
+.checkOutCart:active {
+    background-color: #20bd99;
+    color:#fff;
+}
+.checkOutCart {
+    background-color: #20bd99;
+    color:#fff;
+}
+.btn-success{
+  padding: 0px 10px;
+  font-size: 14px;
+}
+.btn-success b{
+    font-size: 14px;
+}

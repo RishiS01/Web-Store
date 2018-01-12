@@ -1,0 +1,99 @@
+<div class="container-fluid dashboard">
+	<div class="navBar">
+	<app-nav></app-nav>
+</div>
+<div class="row">
+	
+<div class="col-md-10  main-content">
+	<div class="container">
+		<div class="well">
+			<div class="cod-div">
+				<small><h5>
+				<span (click) = "showCashOnDelivery = !showCashOnDelivery"><input type="radio" name="optradio"><b> Cash on Delivery</b></span></h5>
+				</small>
+			</div>
+			<div class="debit-div">
+				<small><h5>
+				<span (click) = "showDebitPayment = !showDebitPayment"><input type="radio" name="optradio"><b> Credit/ATM Card/Debit</b></span></h5>
+				</small>
+			</div>
+		</div>
+		<div *ngIf='showCashOnDelivery ' class="col-md-6 -col-md-offset-2">
+			<div class="panel-body well well-sm cod">
+				<div class="col-md-12">
+					<span><h5><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p></h5></span>
+				</div>
+				<div class="col-md-12">
+					<button type="submit" class="btn btn-default pull-right button" (click)="makePaymentonDelivery()">Confirm Order</button>
+				</div>
+			</div>
+		</div>
+		<div class="row" *ngIf='showDebitPayment'>
+			<div class="col-md-12">
+				<div class="well well-sm address">
+					<div class="panel-heading">
+						<h4> Payment Options</h4>
+					</div>
+					<div>
+						<div class="panel-body">
+							<div class="col-md-8">
+								<form>
+									<div class="row">
+										<div class="col-md-8">
+											<div class="form-group">
+												<label for="name" >Card Number:</label>
+												<div class="input-group">
+													<span class="input-group-addon"><i class="fa fa-credit-card" aria-hidden="true"></i></span>
+													<div class="form-group">
+														<input type="text" name="number" class="form-control" placeholder="Card Number" required>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-7 expiry">
+												<div class="form-group ">
+													<label for="name" >Expiry Date:</label>
+													<input type="text" name="expiry" class="form-control" placeholder="MM/YY" required>
+												</div>
+											</div>
+											<div class="col-md-5">
+												<div class="form-group ">
+													<label for="name" >CVV:</label>
+													<div class="form-group">
+														<input type="text" name="cvv" class="form-control" placeholder="CVV" required>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<label for="name" >Name on Card:</label>
+													<div class="form-group">
+														<input type="text" name="name" class="form-control" placeholder="Enter your Name" required>
+													</div>
+												</div>
+											</div>
+											
+										</div>
+										
+									</div>
+								</form>
+							</div>
+							<div class="col-md-4">
+								<h3>General Information</h3>
+								<h2>
+								<i class="fa fa-cc-visa text-info" aria-hidden="true"></i>
+								<i class="fa fa-cc-mastercard text-danger" aria-hidden="true"></i>
+								<i class="fa fa-cc-amex text-success" aria-hidden="true"></i>
+								<i class="fa fa-cc-paypal text-warning" aria-hidden="true"></i>
+								</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+							</div>
+							<div class="col-md-12">
+								<button type="submit" class="btn btn-default pull-right button" (click)="makePayment()">Make Payment</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

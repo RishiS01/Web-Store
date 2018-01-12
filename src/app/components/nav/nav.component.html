@@ -1,0 +1,60 @@
+<nav class="navbar navbar-transparent navbar-absolute">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Web Store</a>
+            <ul class="nav navbar-nav pull-right visible-xs hidden-md small-dropdown">
+                <li *ngIf="!isLoggedIn"><a href="" routerLink = '/login' class="navLink"><i class="fa fa-sign-in "></i> Login</a></li>
+                    <li *ngIf="isLoggedIn" class="dropdown"><a href="" class="dropdown-toggle" data-toggle='dropdown'><i class="fa fa-user " aria-hidden="true"></i>
+                        {{isLoginUser}}<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li *ngIf="profile.role !=='guest'"><a href="" routerLink='/admin-dashboard'><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
+                            <li *ngIf="profile.role !=='guest'"><a href="" routerLink='/add-product'><i class="fa fa-plus-circle" aria-hidden="true"></i> Add_Product</a></li>
+                            <li ><a href="" routerLink = '/user-profile'><i class="fa fa-user " aria-hidden="true"></i> Profile</a></li>
+                            <li *ngIf = "profile.role ==='guest'"><a href="" routerLink = '/favorite'><i class="fa fa-heart" aria-hidden="true"></i> Favourates</a></li>
+                            <li ><a href="" routerLink = '/change-password'><i class="fa fa-key" aria-hidden="true"></i> Change Password</a></li>
+                            <li *ngIf = "profile.role ==='guest'"><a href="" routerLink = '/cart'><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a></li>
+                            <li class="logoutLink"><a href="#" (click) = "onLogout()"><span class="glyphicon glyphicon glyphicon-off"></span> Logout</a>
+                        </ul>
+                    </li>
+                </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="nav navbar-nav pull-right">
+                <li class="dropdown">
+                    <div class="collapse navbar-collapse" id="menu">
+                        <ul class="nav navbar-nav pull-right">
+                            <li *ngIf="!isLoggedIn"><a href="" routerLink = '/login' class="navLink"><i class="fa fa-sign-in "></i> Login</a></li>
+                            <li *ngIf="isLoggedIn" class="dropdown"><a href="" class="dropdown-toggle" data-toggle='dropdown'><i class="fa fa-user " aria-hidden="true"></i>
+                                {{isLoginUser}}<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li *ngIf="profile.role !=='guest'"><a href="" routerLink='/admin-dashboard'><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
+                                <li ><a href="" routerLink = '/user-profile'><i class="fa fa-user " aria-hidden="true"></i> Profile</a></li>
+                                <li *ngIf = "profile.role ==='guest'"><a href="" routerLink = '/favorite'><i class="fa fa-heart" aria-hidden="true"></i> Favourates</a></li>
+                                <li ><a href="" routerLink = '/change-password'><i class="fa fa-key" aria-hidden="true"></i> Change Password</a></li>
+                                <li *ngIf = "profile.role ==='guest'"><a href="" routerLink = '/cart'><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a></li>
+                                <li class="logoutLink"><a href="#" (click) = "onLogout()"><span class="glyphicon glyphicon glyphicon-off"></span> Logout</a>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <form class="navbar-form navbar-right" role="search">
+            <div class="input-group">
+               <div class="form-group form-black is-empty">
+                <input type="text" class="form-control" placeholder="Search" name="productName"  [(ngModel)]='product.productName' (ngModelChange)='search($event)'>
+                <span class="material-input"></span>
+            </div>
+            <span class="input-group-addon">
+            <i class="fa fa-search" aria-hidden="true"></i><div class="ripple-container"></div>
+            </span> 
+            </div>
+            <ul  class="search-list">
+                <li *ngFor="let product of filteredData">
+                    <span [routerLink] ="['/product-detail/'+product.key]">{{product.productName}}</span>
+                </li>
+            </ul>
+        </form>
+    </div>
+</div>
+</nav>

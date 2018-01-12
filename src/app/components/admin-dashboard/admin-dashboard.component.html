@@ -1,0 +1,69 @@
+<div class="container-fluid dashboard">
+	<div class="navBar">
+		<app-nav></app-nav>
+	</div>
+	<div class="row">
+		
+		<div class="sideBar col-md-3">
+			<div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sideBar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"></a>
+    	</div>
+        	<div id="Sidemenu">
+			<app-side-bar></app-side-bar>
+			<div class="sideBar-image"></div>
+			</div>
+		</div>
+	<div class="col-md-9 " >
+		<div class="main-content">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="product-table">
+				<div class="card product-card">
+					<div class="card-header">
+						<h4 class="card-title">List of Products</h4>
+					</div>
+					<div class="card-content table-responsive">
+						<table *ngIf='product?.length > 0; else noProducts' class ="table table-striped">
+							<thead class="thead-inverse">
+								<tr>
+									<th>Sr.No</th>
+									<th>Product</th>
+									<th>Name</th>
+									<th>Price</th>
+									<th>Category</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody >
+								<tr *ngFor="let product of product; let i = index ">
+									<td>{{i+1}}</td>
+									<td><div class="image-td"><img src="{{product.productImage[0]}}"></div></td>
+									<td>{{product.productName}}</td>
+									<td>{{product.productPrice | currency:"INR" : true}}</td>
+									<td>{{product.productCategory}}</td>
+									<td>
+										<p href="" class="glyphicon glyphicon-pencil edit" [routerLink] ="['/edit-product/'+product.key]"></p>
+										<p href="" class="glyphicon glyphicon-trash delete" (click)="onDeleteProduct(product)"></p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div>
+	</div>
+</div>
+</div>
+<ng-template #noProducts>
+	<h5>No products to show, 
+	add some products</h5>
+</ng-template>

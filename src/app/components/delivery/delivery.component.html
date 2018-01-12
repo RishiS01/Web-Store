@@ -1,0 +1,60 @@
+<div class="container-fluid dashboard">
+	<div class="navBar">
+	<app-nav></app-nav>
+</div>
+<div class="row">
+	
+<div class="col-md-9 col-md-offset-2 main-content">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="well well-sm address">
+					<div class="panel-heading">
+						<h4>Delivery Address</h4>
+					</div>
+					<div>
+						<div class="panel-body">
+							<form>
+								<div class="row">
+									<div class="form-group col-md-4">
+										<label for="name" >Name: <span class="tx-danger">*</span></label>
+										<input type="text"  name="firstName" class="form-control" required placeholder="Name"  [(ngModel)]='profile.firstName' minlength="3" >
+									</div>
+									<div class="form-group col-md-4">
+										<label for="phone" >Contact No: <span class="tx-danger">*</span></label>
+										<input type="text"  name="phone" class="form-control" required placeholder="Contact Number"  [(ngModel)]='profile.phone' minlength="10" #phone='ngModel' maxlength="10" pattern="[0-9]*" >
+									</div>
+									
+									<div class="form-group col-md-4">
+										<label for="location" >Country: <span class="tx-danger">*</span></label>
+										<input type="text"  name="country" class="form-control" required placeholder="Country"  [(ngModel)]='profile.country'  >
+									</div>
+									<div class="form-group col-md-12">
+										<label for="address" >Address: <span class="tx-danger">*</span></label>
+										<textarea type="text"  name="address" class="form-control" required placeholder="Address" [(ngModel)]='profile.address' #address='ngModel'></textarea>
+									</div>
+									<div class="form-group col-md-4">
+										<label for="city" >City: <span class="tx-danger">*</span></label>
+										<input type="text"  name="city" class="form-control" required placeholder="city" [(ngModel)]='profile.city' #city='ngModel'>
+										
+									</div>
+									<div class="form-group col-md-4">
+										<label for="postal code" >Postal Code: <span class="tx-danger">*</span></label>
+										<input type="number"  name="postalCode" class="form-control" required placeholder="POSTAL CODE" [(ngModel)]='profile.postalCode' #postalCode='ngModel' >
+									</div>
+									<div class="form-group col-md-4">
+										<label for="state" >State: <span class="tx-danger">*</span></label>
+										<input type="text"  name="state" class="form-control" required placeholder="State" [(ngModel)]='state'  >
+									</div>
+								</div>
+								<div class="col-md-12">
+									<button type="submit" class="btn btn-default pull-right button" routerLink='/payment'>Proceed</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

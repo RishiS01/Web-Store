@@ -1,0 +1,118 @@
+.dashboard{
+	position: relative;
+    top: 0;
+    /*height: 100vh;*/
+}
+.sideBar-image{
+
+    background-image: url(../../../assets/image/lock.jpg);
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50%;
+    filter: brightness(50%);
+    box-shadow: inset 2000px 0 0 0 rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 1);
+}
+.sideBar{
+   position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 260px;
+    overflow: auto;
+    box-shadow: 6px 2px 12px #9d9d9d;
+}
+.main-content{
+    position: relative;
+    height: 100%;
+    float: right;
+    min-height: 100%;
+    /*width: calc(100% - 260px);*/
+    padding: 35px;
+}
+.navBar{
+   border-bottom: 1px solid #eee;
+  box-shadow: 6px 2px 12px #9d9d9d;
+  color:black;
+}
+.address{
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    margin: 25px 0;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+    border-radius: 6px;
+    color: rgba(0,0,0,.87);
+    background: #fff;
+    border: 1px solid #ddd;
+}
+.panel-heading{
+    color:#fff;
+    margin: -32px 15px 20px 18px;
+    border-radius: 3px;
+    padding: 15px;
+    background-color: #ef5350;
+    position: relative;
+    box-shadow:6px 5px 15px #9d9d9d; 
+}
+textarea{
+    resize: none;
+}
+.button{
+    background-color: #20bd99; 
+    color:#fff;
+}
+button:focus {
+    outline: 0 !important;
+}
+button:hover {
+    background-color: #20bd99;
+}
+.button:active {
+    background-color: #20bd99;
+    color:#fff;
+}
+.expiry{
+    padding-left: 0px;
+}
+.text-info{
+   color:  #44abde;
+}
+.text-danger{
+    color: #e40d09;
+}
+.text-success{
+    color: #319e33;
+}
+.text-warning{
+    color: #f1b80b;
+}
+.cod{
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+.cod-div{
+    padding: 12px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    margin: 24px;
+}
+.debit-div{
+    padding: 12px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    margin: 24px;
+}
+.well{
+    border: 1px solid #ddd;
+}

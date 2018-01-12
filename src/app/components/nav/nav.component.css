@@ -1,0 +1,112 @@
+li{
+	list-style: none;
+}
+.navbar-brand, .navLink{
+	color: #697071;
+	background-color: transparent;
+
+}
+.navLink:hover{
+	background-color: transparent;
+
+}
+.nav>li>a:hover {
+	background-color: transparent;
+}
+.nav .open>a{
+	background-color: transparent;
+}
+.navbar-toggle{
+	background-color: #ddd;
+}
+span.icon-bar{
+	background-color: black;
+}
+.navbar-transparent{
+	margin-bottom: 0px;
+}
+p{
+	margin-top: -27px;
+	margin-left: 35px;
+}
+.material-icons{
+	margin-right: 15px;
+}
+.dropdown-menu li a:hover{
+	background-color: #eceaea;
+}
+.dropdown-menu li a{
+	font-size: 15px;
+	padding: 5px 20px;
+}
+.logoutLink{
+	border-top: 1px solid #ddd;
+	padding: 2px 0px;
+	margin-top: 6px;
+}
+.dropdown-menu li a i{
+	padding: 0px 3px;
+	color: #a2a2a2;
+}
+.search-list li {
+  background-color: #fbfbfb;
+  padding: 7px 20px;
+  text-decoration: none;
+  font-size: 14px;
+  color: black; 
+  white-space: nowrap;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.search-list{
+  padding: 0px;
+  cursor: pointer;
+  line-height: 1.42857143;
+  margin-top: -1px;
+  margin-bottom: 10px;
+  position: absolute;
+  z-index: 10000;
+  border: 1px solid #ddd;
+  width: 200px;
+  border-top: 0px;
+}
+.navbar-form{
+  position: relative;
+}
+.search-list li:hover {
+	background-color: #eee;
+}
+
+@media all and (max-width: 600px){
+	.navbar-toggle{
+		float: left;
+		display: none;
+	}
+	.dropdown{
+		float: left;
+	}
+}
+@media (max-width: 767px){
+.navbar-nav .open .dropdown-menu {
+    position: absolute;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.dropdown-menu li a{
+    font-size: 14px;
+    padding: 5px 9px;
+}
+.small-dropdown{
+	padding-right: 18px;
+}
+a .material-icons{
+  font-size: 20px;
+ margin-right: 3px;
+}
+}

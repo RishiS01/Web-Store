@@ -1,0 +1,25 @@
+.navbar-brand, .navLink{
+	color: #ddd;
+	background-color: transparent;
+
+}
+.navLink:hover{
+	background-color: transparent;
+
+}
+.navbar-toggle{
+	background-color: #ddd;
+}
+span.icon-bar{
+	background-color: black;
+}
+.navbar-transparent{
+	margin-bottom: 0px;
+}
+p{
+	margin-top: -27px;
+	margin-left: 35px;
+}
+.material-icons{
+	margin-right: 15px;
+}

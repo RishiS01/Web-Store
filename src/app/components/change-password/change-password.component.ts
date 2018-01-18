@@ -22,8 +22,8 @@ export class ChangePasswordComponent implements OnInit {
   	public toast:ToastrService) { }
 
   ngOnInit() {
-  	this.authService.getAuth().subscribe(auth=>{
-  		this.authUser=auth;
+  	this.authService.getAuth().subscribe(auth => {
+  		this.authUser = auth;
   	})
   }
 

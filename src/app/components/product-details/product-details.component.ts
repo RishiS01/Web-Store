@@ -30,7 +30,7 @@ export class ProductDetailsComponent implements OnInit {
   ) {
     this.authService.getAuth().subscribe(auth => {
       this.Authuser = auth;
-    })
+    });
   }
 
   ngOnInit() {

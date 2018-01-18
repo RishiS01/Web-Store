@@ -53,7 +53,7 @@ export class AddProductComponent implements OnInit {
          obj=Object.assign([],obj)
          this.categories.push(obj.name)
        })
-      console.log(this.categories);
+    
     })
   }
 
@@ -80,7 +80,7 @@ export class AddProductComponent implements OnInit {
   }
    
 
-   onRemoveProductImage(img,i,$event){
+   onRemoveProductImage(img,i,$event){debugger
      console.log($event);
    	if(confirm("sure")){
    		const img=this.product.productImage;
@@ -132,5 +132,6 @@ onItemAdded($event){
     //   this.onAddNote(f)
     // }
   }
+
   
 }

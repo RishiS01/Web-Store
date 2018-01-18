@@ -14,6 +14,7 @@ li{
     height: 100px;
     max-width: 100%;
     padding: 0px;
+    cursor: pointer;
 }
 .dashboard{
     position: relative;
@@ -66,12 +67,9 @@ li{
     height: 300px;
 }
 .main-content{
-    position: relative;
-    height: 100%;
-    float: right;
     min-height: 100%;
     padding-top: 38px;
-    width: calc(100% - 260px);
+    
 }
 .navBar{
     color:black;
@@ -95,8 +93,14 @@ li{
     padding: 0px;
 }
 .delete{
+    color: #bbb7b7;
+    cursor: pointer;
+    font-size: 15px;
+}
+.delete:hover{
     color: red;
 }
+
 .active{
     color: red;
 }
@@ -104,10 +108,14 @@ li{
     text-overflow: ellipsis;
     text-align: center;
 }
+.product-review{
+    padding: 0px;
+}
 p{
     font-size: 16px;
     width: 200px;
     white-space: nowrap;
+    font-weight: 500;
 }
 .product-description {
    
@@ -155,11 +163,12 @@ p{
     padding: 8px 0 10px 0;
     margin: 8px 0 8px 0;
     border-bottom: 1px solid #ddd;
+    
 }
 .product-price{
     padding-top: 5px;
-    margin-top: 18px;
-    font-size: 17px;
+    margin-top: 8px;
+    font-size: 20px;
 
 }
 .card-content{
@@ -191,7 +200,9 @@ h3,h5{
 .btn-success{
   padding: 0px 10px;
   font-size: 14px;
+  cursor: auto;
 }
 .btn-success b{
     font-size: 14px;
+    
 }

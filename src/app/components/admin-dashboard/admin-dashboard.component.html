@@ -19,7 +19,7 @@
 			<div class="sideBar-image"></div>
 			</div>
 		</div>
-	<div class="col-md-9 " >
+	<div class="col-md-9 dd" >
 		<div class="main-content">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
@@ -45,7 +45,7 @@
 									<td>{{i+1}}</td>
 									<td><div class="image-td"><img src="{{product.productImage[0]}}"></div></td>
 									<td>{{product.productName}}</td>
-									<td>{{product.productPrice | currency:"INR" : true}}</td>
+									<td>{{product.productPrice | currency:"INR" : true :'1.0-2'}}</td>
 									<td>{{product.productCategory}}</td>
 									<td>
 										<p href="" class="glyphicon glyphicon-pencil edit" [routerLink] ="['/edit-product/'+product.key]"></p>

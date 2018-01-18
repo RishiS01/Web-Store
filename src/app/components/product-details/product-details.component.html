@@ -3,19 +3,23 @@
 	<app-nav></app-nav>
 </div>
 <div class="row">
-	<div class="col-md-9 main-content">
+	<div class="col-md-9 col-md-offset-2 main-content">
 		<div class="container">
+
 		<div class="well well-lg product-detail">
 			
 			<div class="row">
-				<div class="poster col-md-6" >
-					<div class="image-div">
-						<img [src]="image | img" alt="Poster" class="title panel-body img-responsive" >
+				<div class=" col-md-6" >
+					<div class="poster">
+						<div class="image-div">
+							<img [src]="image | img" alt="Poster" class="title panel-body img-responsive" >
+						</div>
 					</div>
 				</div>
-				<div class="col-md-6 product-details panel-body">
+				<div class="col-md-6 ">
+					<div class="product-details panel-body">
 					<div><h1>{{product.productName}}</h1></div>
-					<div class="col-md-6">
+					<div class="col-md-6 review-product" >
     					<h4><a (click) = "showReviewInput = !showReviewInput"><i class="fa fa-star-o" aria-hidden="true"></i> {{review.length}} Reviews </a></h4>
     				</div>
     				<div class="col-md-6">
@@ -23,22 +27,18 @@
     				</div>
     				<div class="col-md-12">
 					<div class="panel-footer ">
-						{{product.productDescription}}
-					</div>
-					<br>
-    				<br>
-					<div class="product-price">
-						<p>{{product.productPrice | currency:"INR" : true}}</p>
+						<div class="product-price"><b>{{product.productPrice | currency:"INR" : true}}</b></div>
+						<div class="description">
+							<span>Description:</span>
+							<div class="product-description col-md-12">{{product.productDescription}}</div>
+						</div>
 					</div>
 					</div>
 					<div class="row">
-					<div class="col-md-12">
-						<button class="btn btn-lg addToCart" (click)='addProductToCart(product)'><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart </button>
-						<button class="btn btn-lg buyItem" routerLink='/delivery'><i class="fa fa-buysellads fa-rotate-90" aria-hidden="true"></i> Buy Now </button>
-					</div>
+					
 				</div>
 				</div>
-				
+				</div>
 			</div>
 			
 			<div class="row ">
@@ -52,6 +52,13 @@
 						</div>
 					</div>
 					</div>
+					
+				</div>
+				<div class="col-md-6">
+						<div class="action-buttons">
+						<button class="btn btn-lg addToCart" (click)='addProductToCart(product)'><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart </button>
+						<button class="btn btn-lg buyItem" routerLink='/delivery'><i class="fa fa-buysellads fa-rotate-90" aria-hidden="true"></i> Buy Now </button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -61,9 +68,6 @@
     		<form  #f='ngForm'(ngSubmit)=onSubmitUserReview(f) *ngIf='showReviewInput'>
     			<div class="form-group">
     				<div class="col-md-5">
-    					
-    				<!-- </div>
-    				<div class="col-md-5" > -->
     					<span class="rating" >
    							<input type="radio" id="star5" name="userrating" value="5" [(ngModel)]='userrating'/><label class = "full" for="star5" title="Awesome - 5 stars"></label>
 						    <!-- <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label> -->
@@ -88,13 +92,19 @@
     		<h4>User Comments:</h4>
     		<ul >
     			<li *ngFor="let rev of review ; let i= index "> 
-    				<h5>
-    					<p> <span class="userEmail"><i class="fa fa-user" aria-hidden="true"></i>  {{rev.email}} : </span><span class="review">{{rev.review}}</span> <span class="btn btn-warning fa fa-star"> <small class="rating-font">{{rev.rating}}</small></span>
-    						<span *ngIf='Authuser'><span *ngIf='Authuser.uid === rev.id ' class="glyphicon glyphicon-remove pull-right remove" (click)='onDeleteReviewC(rev,i)'></span></span>
-    					</p>		
+    				<h5 class="user-comment">
+    					<p>
+    						<span class="btn btn-warning fa fa-star"> 
+    							<small class="rating-font">{{rev.rating}}</small>
+    						</span>
+    						<div class="review">{{rev.review}}</div>
+    						<span class="userEmail"> <small class="user-name">By</small> <i class="fa fa-user" aria-hidden="true"></i> {{rev.email}}  </span>
+    						<span *ngIf='Authuser'><span *ngIf='Authuser.uid === rev.id ' class="glyphicon glyphicon-remove pull-right remove" (click)='onDeleteReviewC(rev,i)'></span>
+    					</span>
+    							
     				</h5>
     			</li>
-    		</ul>
+    		</ul> 
     	</div>
 	</div>
 	</div>

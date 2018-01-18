@@ -15,35 +15,44 @@ import { ToastrService } from 'ngx-toastr';
 export class CartComponent implements OnInit {
 
 authUser:User;
-cart={} as Product;
-  
+// cart={} as Product;
+total:number; 
+cart=[];
   constructor(
   	 private router:Router,
   	 public wbService:WebStoreService,
      public authService:AuthServiceService,
      private toaster:ToastrService
-  	) { }
+  	) {
+      
+     }
 
   ngOnInit() {
   	this.authService.getAuth().subscribe(auth=>{
   		this.authUser=auth
   		this.wbService.getUserCartProducts(this.authUser.uid).subscribe((data:any[])=>{
-  			console.log( data);
+  			// console.log( data);
+        
   			this.cart = _.values(data);
-  			console.log(this.cart);
+  			// console.log(this.cart);
         data.map(obj=>{
+          obj.quantity = 1;
           let count = 0;
           let oldRating=0
           if(typeof obj.reviews !== typeof undefined){
             Object.values(obj.reviews).forEach(key=>{
-              let rat=Number(key.rating) || 0;
-              oldRating=oldRating+rat 
-              count++
+              if(key.rating){
+                let rat=Number(key.rating);
+                oldRating=oldRating+rat 
+                count++
+              }
+              
             })
             obj.rating = oldRating/count;
           }else{
           obj.rating=0;
           }
+          this.getTotal();
         })
   		})
   	})
@@ -54,5 +63,18 @@ cart={} as Product;
       this.toaster.success('Removed from Cart');
     }
   }
+  getTotal(){
+    let total = 0;
+    this.cart.forEach(items=>{
+      let amount = items.productPrice * items.quantity
+     total= total+amount
+    })
+    this.total = total;
+    console.log(this.total); 
+  }
+ onChange($event){
+   console.log($event);
+   this.getTotal()
+ }
 
 }

@@ -52,6 +52,7 @@ import {
   ToastNoAnimation,
   ToastNoAnimationModule,
 } from 'ngx-toastr';
+import {ToastModule} from 'ng2-toastr/ng2-toastr';
 
 import { TagInputModule } from 'ngx-chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -91,7 +92,7 @@ const appRoutes:Routes = [
 export const dropzone_config: DropzoneConfigInterface = {
   url: 'https://httpbin.org/post',
   maxFilesize: 5,
-  // maxFiles: 5,
+  maxFiles: 100,
   acceptedFiles: 'image/*',
   addRemoveLinks: true,
   uploadMultiple:true,
@@ -145,7 +146,8 @@ export const dropzone_config: DropzoneConfigInterface = {
       preventDuplicates: true,
       toastComponent: ToastNoAnimation,
     }),
-   FilterPipeModule
+   FilterPipeModule,
+   ToastModule.forRoot()
    ],
    
   providers: [

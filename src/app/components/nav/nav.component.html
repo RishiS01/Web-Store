@@ -10,7 +10,7 @@
                             <li *ngIf="profile.role !=='guest'"><a href="" routerLink='/admin-dashboard'><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
                             <li *ngIf="profile.role !=='guest'"><a href="" routerLink='/add-product'><i class="fa fa-plus-circle" aria-hidden="true"></i> Add_Product</a></li>
                             <li ><a href="" routerLink = '/user-profile'><i class="fa fa-user " aria-hidden="true"></i> Profile</a></li>
-                            <li *ngIf = "profile.role ==='guest'"><a href="" routerLink = '/favorite'><i class="fa fa-heart" aria-hidden="true"></i> Favourates</a></li>
+                            <li *ngIf = "profile.role ==='guest'"><a href="" routerLink = '/favorite'><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</a></li>
                             <li ><a href="" routerLink = '/change-password'><i class="fa fa-key" aria-hidden="true"></i> Change Password</a></li>
                             <li *ngIf = "profile.role ==='guest'"><a href="" routerLink = '/cart'><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a></li>
                             <li class="logoutLink"><a href="#" (click) = "onLogout()"><span class="glyphicon glyphicon glyphicon-off"></span> Logout</a>
@@ -29,7 +29,7 @@
                             <ul class="dropdown-menu">
                                 <li *ngIf="profile.role !=='guest'"><a href="" routerLink='/admin-dashboard'><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
                                 <li ><a href="" routerLink = '/user-profile'><i class="fa fa-user " aria-hidden="true"></i> Profile</a></li>
-                                <li *ngIf = "profile.role ==='guest'"><a href="" routerLink = '/favorite'><i class="fa fa-heart" aria-hidden="true"></i> Favourates</a></li>
+                                <li *ngIf = "profile.role ==='guest'"><a href="" routerLink = '/favorite'><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</a></li>
                                 <li ><a href="" routerLink = '/change-password'><i class="fa fa-key" aria-hidden="true"></i> Change Password</a></li>
                                 <li *ngIf = "profile.role ==='guest'"><a href="" routerLink = '/cart'><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a></li>
                                 <li class="logoutLink"><a href="#" (click) = "onLogout()"><span class="glyphicon glyphicon glyphicon-off"></span> Logout</a>
@@ -56,5 +56,6 @@
             </ul>
         </form>
     </div>
+    
 </div>
 </nav>

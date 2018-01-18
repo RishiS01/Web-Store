@@ -8,4 +8,5 @@ export interface Product{
 	reviews?:any[];
 	id?:number;
 	productPrice?:number;
+	productHighlights?:any[]
 }

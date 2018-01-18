@@ -50,12 +50,8 @@ li{
     overflow: auto;
     box-shadow: 6px 2px 12px #9d9d9d;
 }
-.main-content{
-    position: relative;
-    height: 100%;
-    float: right;
-    min-height: 100%;
-    width: calc(100% - 260px);
+.action-buttons{
+    text-align: center;
 }
 .product-image img{
     max-width: 100%;
@@ -87,22 +83,28 @@ li{
 }
 .product-detail{
     margin-top: 30px;
-    box-shadow: 9px 6px 12px #9d9d9d;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+   /* box-shadow: 9px 6px 12px #9d9d9d;*/
 }
 .product-price{
-    /*position: absolute;*/
-    padding: 20px 0;
-    width: 60px;
-    height: 60px;
+    padding-top: 5px;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+.product-description{
+    font-weight: 500;
+    padding: 10px 0px;
+}
+.product-price b{
+    font-size: 20px;
+}
+.btn-default{
+    padding: 0px 10px;
     color: #fff;
     text-align: center;
-    border-radius: 100%;
-    -webkit-border-radius: 100%;
-    -o-border-radius: 100%;
-    bottom: 30px;
-    right: 17px;
-    background-color: #f33155!important;
-
+    background-color: #ff9f00;
+    cursor: auto;
 }
 .product-details{
     float: right;
@@ -123,12 +125,14 @@ li{
 }
 .remove{
     color: red;
+    cursor: pointer;
 }
 .fa-user{
     color: grey;
 }
 .user-review{
-    box-shadow: 9px 6px 12px #9d9d9d;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+    border: 1px solid #ddd;
 }
 h5{
     color: red;
@@ -140,6 +144,20 @@ h5{
 }
 .review{
     color: #504c4c;
+    margin: 10px;
+    line-height: 150%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.description{
+    margin: 10px 0px;
+}
+.description span{ 
+    font-weight: 500;
+    color: #878787;
+    width: 110px;
+    padding-right: 10px;
+    float: left;
 }
 fieldset, label { margin: 0; padding: 0; }
 body{ margin: 20px; }
@@ -172,12 +190,17 @@ h1 { font-size: 1.5em; margin: 10px; }
 }
 .btn-success{
     padding: 0 12px;
+    cursor: auto;
 }
 .btn-warning{
     background-color: #ff9f00;
     padding: 1px 4px;
     font-size: 11px;
+    cursor: auto;
     
+}
+.review-product{
+    cursor: pointer;
 }
 .rating-font{
     font-size: 14px;
@@ -186,6 +209,14 @@ h1 { font-size: 1.5em; margin: 10px; }
 }
 b{
     font-size: 16px;
+}
+.user-name{
+    font-size: 11px;
+}
+.user-comment{
+    padding: 10px 18px;
+    border-bottom: 1px solid #ddd;
+
 }
 /***** CSS Magic to Highlight Stars on Hover *****/
 

@@ -1,13 +1,25 @@
-
+<div class="header">
+  <div class="admin-header">
+    <p>{{isLoginUser}}</p>
+  </div>
+</div>
 <div class="nav-container sideBar">
-	<div class="nav-container">
-        <ul class="nav" id="menu">
-            <li routerLinkActive="active" *ngFor="let menuItem of menuItems; let i = index" class = "{{menuItem.class}}">
-                <a  [routerLink]="[menuItem.path]">
-                    <i class="material-icons" >{{menuItem.icon}}</i>
-                    <p>{{menuItem.title}}</p>
-                </a>
-            </li>
-        </ul>
-    </div>
+
+  <div class="nav-container">
+
+    <ul class="nav" id="menu">
+      <li routerLinkActive="active" *ngFor="let menuItem of menuItems; let i = index" class="{{menuItem.class}}">
+        <a routerLinkActive="active" [routerLink]="[menuItem.path]">
+          <i class="material-icons">{{menuItem.icon}}</i>
+          <p>{{menuItem.title}}</p>
+        </a>
+      </li>
+      <li (click)="onLogout()">
+        <a class="logout">
+          <i class="material-icons">power_settings_new</i>
+          <p>LogOut</p>
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>

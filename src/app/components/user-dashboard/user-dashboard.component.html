@@ -55,7 +55,7 @@
                     </li>
                   </a>
                 </ul>
-                <li class="collapsed" data-toggle="collapse" data-target="#account">
+                <li class="collapsed" data-toggle="collapse" data-target="#account" *ngIf="profile.role !=='admin'">
                   <a href="#">
                     <span class="menu-heading">My Account </span>
                     <i class="fa fa-angle-down" aria-hidden="true"></i>

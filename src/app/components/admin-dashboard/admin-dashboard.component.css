@@ -8,10 +8,9 @@ img{
     max-height: 80px;
 }
 .dashboard{
-	position: relative;
+    position: relative;
     top: 0;
-    max-height: 100vh;
-   
+    height: 100vh;
 }
 .sideBar-image{
 
@@ -26,7 +25,7 @@ img{
     background-size: cover;
     background-position: 50%;
     filter: brightness(50%);
-    box-shadow: inset 2000px 0 0 0 rgba(255, 255, 255, 0.5);
+    /* box-shadow: inset 2000px 0 0 0 rgba(255, 255, 255, 0.5); */
     border-color: rgba(255, 255, 255, 1);
 }
 .sideBar{
@@ -37,7 +36,6 @@ img{
     width: 260px;
     overflow: auto;
     height: 100vh;
-    overflow-x: hidden;
 }
 .card-title{
     display: grid;

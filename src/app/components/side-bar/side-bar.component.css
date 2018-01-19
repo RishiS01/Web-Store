@@ -17,19 +17,19 @@
 
 }
 li a:active{
-	background-color: #f44336;
+	background-color: #ec5855;
 	color: #ffffff;
-	box-shadow:6px 5px 15px #a6a6a6;
+	box-shadow:6px 5px 15px #4c2b2b;
 }
 li a:focus{
-	background-color: #f44336;
+	background-color: #ec5855;
 	color: #ffffff;
-	 box-shadow:6px 5px 15px #a6a6a6;
+	 box-shadow:6px 5px 15px #4c2b2b;
 }
 li>a.active{
-	background-color: #f44336;
+	background-color: #ec5855;
 	color: #ffffff;
-	box-shadow:6px 5px 15px #a6a6a6;
+	box-shadow:6px 5px 15px #4c2b2b;
 
 }
 .nav>li, .nav>li>a {
@@ -67,6 +67,22 @@ li a{
 }
 .active{
     color: #f44336;
+}
+.logout{
+    cursor: pointer;
+}
+.header{
+    margin: 10px 15px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+}
+.admin-header{
+    font-size: 17px;
+    color: #fff;
+}
+.admin-header p , i{
+    margin: 0px;
 }
 
 @media only screen and (max-width:768px)  {

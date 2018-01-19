@@ -13,24 +13,6 @@ a {
 }
 
 /* position */
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Marketplace
-Explore
- @RishiS01
- Sign out
- Watch 19
-  Star 311  Fork 86 PointInside/ng2-toastr
- Code  Issues 76  Pull requests 4  Projects 0  Wiki  Insights
-Branch: master Find file Copy pathng2-toastr/ng2-toastr.css
-07fcc09  on Mar 17, 2017
-@tschettler tschettler Fix toast-container overlay UI blocking (#146)
-2 contributors @derekshi @tschettler
-RawBlameHistory     
-198 lines (193 sloc)  6.65 KB
 .toast-title {
     font-weight: bold;
 }

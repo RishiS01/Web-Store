@@ -9,6 +9,7 @@ export interface Profile{
 	postalCode?:string;
 	$key?:string;
 	role?:string;
+	company?:string;
 }
 
 

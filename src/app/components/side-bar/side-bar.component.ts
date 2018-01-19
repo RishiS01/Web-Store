@@ -7,8 +7,8 @@ import { AuthServiceService } from '../../services/auth-service.service';
 const appRoutes:RouteInfo[] = [
  	{ path: '/admin-dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
 	{ path: '/admin-profile', title: ' Profile',  icon:'person', class: '' },
-  { path:'/add-product',title: 'Add_Product',  icon:'library_add', class: '' },
-  { path:'/change-password',title: 'Change Password',  icon:'fingerprint', class: '' },
+  { path: '/add-product',title: 'Add_Product',  icon:'library_add', class: '' },
+  { path: '/admin-password',title: 'Change Password',  icon:'fingerprint', class: '' },
  
 	
 ]
@@ -19,8 +19,8 @@ const appRoutes:RouteInfo[] = [
 })
  
 export class SideBarComponent implements OnInit {
-  isLoggedIn:boolean=false;
-  isLoginUser:string;
+  isLoggedIn = false;
+  isLoginUser: string;
 	menuItems: any[];
   constructor(
     public authService:AuthServiceService,
@@ -28,9 +28,9 @@ export class SideBarComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-  	this.menuItems = appRoutes.filter(menuItem => menuItem);
-   this.authService.getAuth().subscribe(auth=>{
-      if(auth){
+    this.menuItems = appRoutes.filter(menuItem => menuItem);
+    this.authService.getAuth().subscribe(auth=>{
+      if(auth) {
         this.isLoggedIn=true;
         this.isLoginUser=auth.email;
       }else{

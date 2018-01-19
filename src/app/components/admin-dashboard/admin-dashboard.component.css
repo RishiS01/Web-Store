@@ -30,14 +30,13 @@ img{
     border-color: rgba(255, 255, 255, 1);
 }
 .sideBar{
-    
     top: 0;
     bottom: 0;
     left: 0;
     z-index: 1;
     width: 260px;
     overflow: auto;
-    box-shadow: 6px 2px 12px #9d9d9d;
+    height: 100vh;
     overflow-x: hidden;
 }
 .card-title{

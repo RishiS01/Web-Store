@@ -45,7 +45,7 @@
 
     background-image: url(../../../assets/image/lock.jpg);
     position: absolute;
-    z-index: 1;
+    z-index: -1;
     height: 100%;
     width: 100%;
     display: block;
@@ -58,14 +58,12 @@
     border-color: rgba(255, 255, 255, 1);
 }
 .sideBar{
-    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     z-index: 1;
     width: 260px;
     height: 100vh;
-    box-shadow: 6px 2px 12px #9d9d9d;
 }
 .main-content{
     padding-top: 30px;
@@ -216,9 +214,38 @@
             transform: scale(1);
   }
 }
-@media only screen and (max-width:768px)  {
+@media all and (max-width: 768px){
     .sideBar{
+      
+    }
+    .main-content{
+    height: auto;
+    min-height: 100%;
+    
+}
+.sideBar{
         height: auto;
         border-right: 0px solid #f0f0f0;
+        margin: 0 auto;
+        transition: 0.3s;
+        display: none;
     }
-}
+      .toggle-btn {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        left: 10px;
+        top: -38px;
+        z-index: 10 !important;
+        padding: 3px;
+        background-color: #ffffff;
+        color: #000;
+        width: 40px;
+        text-align: center;
+    }
+  .dropdownMenu{
+    display: none;
+  }
+}   
+
+

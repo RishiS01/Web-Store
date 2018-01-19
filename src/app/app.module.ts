@@ -22,8 +22,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { NavComponent } from './components/nav/nav.component';
-import { EditProductComponent } from './components/edit-product/edit-product.component'; 
+import { EditProductComponent } from './components/edit-product/edit-product.component';
 import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
+import { AdminUpdatePasswordComponent } from './components/admin-update-password/admin-update-password.component';
 
 
 import { AuthServiceService } from './services/auth-service.service';
@@ -60,6 +61,7 @@ import { SortPipe } from './sort.pipe';
 
 
 
+
 export const firebaseConfig = {
     apiKey:" AIzaSyDQCTzslEHPCFsaSvEzLtNXiGOCPoTu6B8 ",
     authDomain: "web-store-7d371.firebaseapp.com",
@@ -85,7 +87,9 @@ const appRoutes: Routes = [
   { path: 'edit-product/:id',component:EditProductComponent,canActivate:[AuthGuard]},
   { path: 'change-password',component:ChangePasswordComponent,canActivate:[AuthGuard]},
   { path: 'delivery',component:DeliveryComponent,canActivate:[AuthGuard]},
-  { path: 'admin-profile', component: AdminProfileComponent, canActivate: [AuthGuard]}
+  { path: 'admin-profile', component: AdminProfileComponent, canActivate: [AuthGuard]},
+  { path: 'admin-password', component: AdminUpdatePasswordComponent, canActivate: [AuthGuard]},
+
 
 ];
 export const dropzone_config: DropzoneConfigInterface = {
@@ -125,7 +129,8 @@ export const dropzone_config: DropzoneConfigInterface = {
     EditProductComponent,
     CategoryPipe,
     SortPipe,
-    AdminProfileComponent
+    AdminProfileComponent,
+    AdminUpdatePasswordComponent
   ],
   imports: [
     NguiAutoCompleteModule,

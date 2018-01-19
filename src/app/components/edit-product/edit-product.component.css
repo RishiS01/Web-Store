@@ -86,6 +86,9 @@
    display:inline-block;
    margin-left: 29px;
 }
+.dz-message{
+    cursor: pointer;
+}
 .sk-circle {
   margin: 100px auto;
   width: 60px;

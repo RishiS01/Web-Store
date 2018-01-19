@@ -3,7 +3,7 @@ import { Profile } from '../../Models/profile';
 import { WebStoreService } from '../../services/web-store.service';
 import { AuthServiceService } from '../../services/auth-service.service';
 import { ToastrService } from 'ngx-toastr';
-import { Router,ActivatedRoute,Params } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import * as firebase from 'firebase/app';
 import { NgForm } from '@angular/forms';
 import { User } from 'firebase/app';
@@ -15,26 +15,25 @@ import { User } from 'firebase/app';
 })
 export class AdminProfileComponent implements OnInit {
 
-	Authuser:User;
-	profile ={} as Profile;
-  constructor( 
-  	private router:Router,
-  	private toaster:ToastrService,
-  	public wbService:WebStoreService,
-  	public authService:AuthServiceService
-  	) { }
+ Authuser: User;
+ profile = {} as Profile;
+  constructor(
+		private router: Router,
+		private toaster: ToastrService,
+  	public wbService: WebStoreService,
+		public authService: AuthServiceService
+		) { }
 
   ngOnInit() {
-  	this.authService.getAuth().subscribe(auth=>{
-  		this.Authuser=auth
-      this.wbService.getAdminProfile(auth.uid).valueChanges().subscribe(data=>{
-      this.profile=data || {} as Profile;
+		this.authService.getAuth().subscribe(auth => {
+  	this.Authuser = auth;
+    this.wbService.getAdminProfile(auth.uid).valueChanges().subscribe(data => {
+    this.profile = data || {} as Profile;
     });
-  	})
+	});
   }
-  createAdminProfile(f:NgForm){
-  	this.profile.role='admin';
-  	this.wbService.adminProfile(this.profile,this.Authuser.uid)
+  createAdminProfile(f: NgForm) {
+  	this.profile.role = 'admin';
+  	this.wbService.adminProfile(this.profile, this.Authuser.uid);
   }
-
 }

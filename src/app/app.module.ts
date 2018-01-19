@@ -54,15 +54,14 @@ import {
 } from 'ngx-toastr';
 import {ToastModule} from 'ng2-toastr/ng2-toastr';
 
-import { TagInputModule } from 'ngx-chips';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FilterPipeModule } from 'ngx-filter-pipe';
 import { SortPipe } from './sort.pipe';
 
 
 
 export const firebaseConfig = {
-    apiKey: "AIzaSyDQCTzslEHPCFsaSvEzLtNXiGOCPoTu6B8",
+    apiKey:" AIzaSyDQCTzslEHPCFsaSvEzLtNXiGOCPoTu6B8 ",
     authDomain: "web-store-7d371.firebaseapp.com",
     databaseURL: "https://web-store-7d371.firebaseio.com",
     projectId: "web-store-7d371",
@@ -70,34 +69,34 @@ export const firebaseConfig = {
     messagingSenderId: "493891340543"
   };
 
-const appRoutes:Routes = [
-	{ path:'', component:UserDashboardComponent},
-	{ path:'admin-dashboard', component:AdminDashboardComponent,canActivate:[AuthGuard] },
-	{ path:'login', component:LoginComponent },
-	{ path:'category/:name', component:CategoriesComponent },
-	{ path:'navbar', component:NavbarComponent },
-	{ path:'favorite', component:FavouritesComponent,canActivate:[AuthGuard] },
-	{ path:'product-detail/:id', component: ProductDetailsComponent },
-	{ path:'user-profile', component:UserProfileComponent,canActivate:[AuthGuard] },
-	{ path:'register', component:RegisterComponent },
-  { path:'add-product',component: AddProductComponent,canActivate:[AuthGuard]},
-  { path:'cart' , component:CartComponent },
-  { path:'payment',component:PaymentComponent,canActivate:[AuthGuard] },
-  { path:'edit-product/:id',component:EditProductComponent,canActivate:[AuthGuard]},
-  { path:'change-password',component:ChangePasswordComponent,canActivate:[AuthGuard]},
-  { path:'delivery',component:DeliveryComponent,canActivate:[AuthGuard]},
-  { path:'admin-profile',component:AdminProfileComponent,canActivate:[AuthGuard]}
+const appRoutes: Routes = [
+  { path: '', component: UserDashboardComponent},
+  { path: 'admin-dashboard', component:AdminDashboardComponent,canActivate:[AuthGuard] },
+  { path: 'login', component:LoginComponent },
+  { path: 'category/:name', component:CategoriesComponent },
+  { path: 'navbar', component:NavbarComponent },
+  { path: 'favorite', component:FavouritesComponent,canActivate:[AuthGuard] },
+  { path: 'product-detail/:id', component: ProductDetailsComponent },
+  { path: 'user-profile', component:UserProfileComponent,canActivate:[AuthGuard] },
+  { path: 'register', component:RegisterComponent },
+  { path: 'add-product',component: AddProductComponent,canActivate:[AuthGuard]},
+  { path: 'cart' , component:CartComponent },
+  { path: 'payment',component:PaymentComponent,canActivate:[AuthGuard] },
+  { path: 'edit-product/:id',component:EditProductComponent,canActivate:[AuthGuard]},
+  { path: 'change-password',component:ChangePasswordComponent,canActivate:[AuthGuard]},
+  { path: 'delivery',component:DeliveryComponent,canActivate:[AuthGuard]},
+  { path: 'admin-profile', component: AdminProfileComponent, canActivate: [AuthGuard]}
 
-]
+];
 export const dropzone_config: DropzoneConfigInterface = {
   url: 'https://httpbin.org/post',
   maxFilesize: 5,
   maxFiles: 100,
   acceptedFiles: 'image/*',
   addRemoveLinks: true,
-  uploadMultiple:true,
+  uploadMultiple: true,
   createImageThumbnails: true,
-  autoProcessQueue:true,
+  autoProcessQueue: true,
 
 };
 
@@ -127,7 +126,6 @@ export const dropzone_config: DropzoneConfigInterface = {
     CategoryPipe,
     SortPipe,
     AdminProfileComponent
-   
   ],
   imports: [
     NguiAutoCompleteModule,
@@ -135,7 +133,7 @@ export const dropzone_config: DropzoneConfigInterface = {
     // BrowserAnimationsModule,
     FormsModule,
     ToastNoAnimationModule,
-    TagInputModule, 
+    // TagInputModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     RouterModule.forRoot(appRoutes),
@@ -146,10 +144,8 @@ export const dropzone_config: DropzoneConfigInterface = {
       preventDuplicates: true,
       toastComponent: ToastNoAnimation,
     }),
-   FilterPipeModule,
    ToastModule.forRoot()
    ],
-   
   providers: [
     AngularFireAuth,
     AngularFireDatabase,

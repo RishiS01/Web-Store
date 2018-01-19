@@ -9,7 +9,7 @@ import { User } from 'firebase/app';
 import { ToastrService } from 'ngx-toastr';
 import { CategoryPipe } from '../../category.pipe';
 import { Observable } from 'rxjs/Observable';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+// import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { log } from 'util';
 import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 
@@ -41,9 +41,9 @@ export class UserDashboardComponent implements OnInit {
     public authService: AuthServiceService,
     private toast: ToastrService,
     private cdref: ChangeDetectorRef,
-    public toastr: ToastsManager, vcr: ViewContainerRef
+    // public toastr: ToastsManager, vcr: ViewContainerRef
   ) {
-    this.toastr.setRootViewContainerRef(vcr);
+    // this.toastr.setRootViewContainerRef(vcr);
     this.authService.getAuth().subscribe(auth => {
       this.Authuser = auth;
     });

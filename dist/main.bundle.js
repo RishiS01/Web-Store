@@ -147,11 +147,8 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33_ngx_toastr__ = __webpack_require__("../../../../ngx-toastr/toastr.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34_ng2_toastr_ng2_toastr__ = __webpack_require__("../../../../ng2-toastr/ng2-toastr.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34_ng2_toastr_ng2_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_34_ng2_toastr_ng2_toastr__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35_ngx_chips__ = __webpack_require__("../../../../ngx-chips/ngx-chips.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37_ngx_filter_pipe__ = __webpack_require__("../../../../ngx-filter-pipe/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37_ngx_filter_pipe___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_37_ngx_filter_pipe__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__sort_pipe__ = __webpack_require__("../../../../../src/app/sort.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__sort_pipe__ = __webpack_require__("../../../../../src/app/sort.pipe.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -197,10 +194,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-
 var firebaseConfig = {
-    apiKey: "AIzaSyDQCTzslEHPCFsaSvEzLtNXiGOCPoTu6B8",
+    apiKey: " AIzaSyDQCTzslEHPCFsaSvEzLtNXiGOCPoTu6B8 ",
     authDomain: "web-store-7d371.firebaseapp.com",
     databaseURL: "https://web-store-7d371.firebaseio.com",
     projectId: "web-store-7d371",
@@ -263,7 +258,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_21__components_nav_nav_component__["a" /* NavComponent */],
             __WEBPACK_IMPORTED_MODULE_22__components_edit_product_edit_product_component__["a" /* EditProductComponent */],
             __WEBPACK_IMPORTED_MODULE_32__category_pipe__["a" /* CategoryPipe */],
-            __WEBPACK_IMPORTED_MODULE_38__sort_pipe__["a" /* SortPipe */],
+            __WEBPACK_IMPORTED_MODULE_36__sort_pipe__["a" /* SortPipe */],
             __WEBPACK_IMPORTED_MODULE_23__components_admin_profile_admin_profile_component__["a" /* AdminProfileComponent */]
         ],
         imports: [
@@ -272,8 +267,8 @@ AppModule = __decorate([
             // BrowserAnimationsModule,
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormsModule"],
             __WEBPACK_IMPORTED_MODULE_33_ngx_toastr__["b" /* ToastNoAnimationModule */],
-            __WEBPACK_IMPORTED_MODULE_35_ngx_chips__["a" /* TagInputModule */],
-            __WEBPACK_IMPORTED_MODULE_36__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+            // TagInputModule,
+            __WEBPACK_IMPORTED_MODULE_35__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
             __WEBPACK_IMPORTED_MODULE_27_angularfire2__["a" /* AngularFireModule */].initializeApp(firebaseConfig),
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* RouterModule */].forRoot(appRoutes),
             __WEBPACK_IMPORTED_MODULE_30_ngx_dropzone_wrapper__["DropzoneModule"].forRoot(dropzone_config),
@@ -283,7 +278,6 @@ AppModule = __decorate([
                 preventDuplicates: true,
                 toastComponent: __WEBPACK_IMPORTED_MODULE_33_ngx_toastr__["a" /* ToastNoAnimation */],
             }),
-            __WEBPACK_IMPORTED_MODULE_37_ngx_filter_pipe__["FilterPipeModule"],
             __WEBPACK_IMPORTED_MODULE_34_ng2_toastr_ng2_toastr__["ToastModule"].forRoot()
         ],
         providers: [
@@ -2179,8 +2173,6 @@ module.exports = "<div class=\"container-fluid dashboard\">\n  <div class=\"navB
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_lodash__ = __webpack_require__("../../../../lodash/lodash.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_lodash__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_toastr__ = __webpack_require__("../../../../ngx-toastr/toastr.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_toastr_ng2_toastr__ = __webpack_require__("../../../../ng2-toastr/ng2-toastr.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_toastr_ng2_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_ng2_toastr_ng2_toastr__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2196,17 +2188,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
 var UserDashboardComponent = (function () {
-    function UserDashboardComponent(router, wbService, authService, toast, cdref, toastr, vcr) {
+    function UserDashboardComponent(router, wbService, authService, toast, cdref) {
         var _this = this;
         this.router = router;
         this.wbService = wbService;
         this.authService = authService;
         this.toast = toast;
         this.cdref = cdref;
-        this.toastr = toastr;
         this.product = [];
         this.searchProducts = [];
         this.categories = [];
@@ -2215,7 +2204,7 @@ var UserDashboardComponent = (function () {
         this.review = [];
         this.loader = false;
         this.userFavourite = false;
-        this.toastr.setRootViewContainerRef(vcr);
+        // this.toastr.setRootViewContainerRef(vcr);
         this.authService.getAuth().subscribe(function (auth) {
             _this.Authuser = auth;
         });
@@ -2319,10 +2308,10 @@ UserDashboardComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/user-dashboard/user-dashboard.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/user-dashboard/user-dashboard.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_web_store_service__["a" /* WebStoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_web_store_service__["a" /* WebStoreService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service_service__["a" /* AuthServiceService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service_service__["a" /* AuthServiceService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5_ngx_toastr__["d" /* ToastrService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ngx_toastr__["d" /* ToastrService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_6_ng2_toastr_ng2_toastr__["ToastsManager"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ng2_toastr_ng2_toastr__["ToastsManager"]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"]) === "function" && _h || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_web_store_service__["a" /* WebStoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_web_store_service__["a" /* WebStoreService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service_service__["a" /* AuthServiceService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service_service__["a" /* AuthServiceService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5_ngx_toastr__["d" /* ToastrService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ngx_toastr__["d" /* ToastrService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _f || Object])
 ], UserDashboardComponent);
 
-var _a, _b, _c, _d, _e, _f, _g, _h;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=user-dashboard.component.js.map
 
 /***/ }),

@@ -9,7 +9,6 @@ import { User } from 'firebase/app';
 import { ToastrService } from 'ngx-toastr';
 import { CategoryPipe } from '../../category.pipe';
 import { Observable } from 'rxjs/Observable';
-// import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { log } from 'util';
 import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 import { Profile } from '../../Models/profile';
@@ -96,7 +95,7 @@ export class UserDashboardComponent implements OnInit {
     this.wbService.removeAsFavourite(this.Authuser.uid, i);
     this.toast.success('Removed from your Wishlist');
   }
-  sortPopular(sort) {
+  sortPopular() {
     this.product = _.shuffle(this.product);
   }
   sortLowProduct(sort) {
@@ -120,7 +119,9 @@ export class UserDashboardComponent implements OnInit {
     this.wbService.getCategories().subscribe((data: any[]) => {
       const cat = [];
       data.map(obj => {
+        console.log(obj);
         obj = Object.assign([], obj);
+        console.log(obj);
         this.categories.push(obj);
       });
     });

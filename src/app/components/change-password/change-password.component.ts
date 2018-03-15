@@ -27,18 +27,16 @@ export class ChangePasswordComponent implements OnInit {
   	})
   }
 
-  onChangeUserPassword(f){
-  	let newPassword=f.value.newPassword;
-  	let checkPassword=f.value.passwordCheck
-  	let user = firebase.auth().currentUser;
-  	if(checkPassword !== newPassword){
-  		this.toast.error('Password did not match. please try again','Oops!!');
-  	}
-  	else{
-	
+  onChangeUserPassword(f) {
+  const newPassword = f.value.newPassword;
+  const checkPassword = f.value.passwordCheck;
+  const user = firebase.auth().currentUser;
+    if (checkPassword !== newPassword) {
+      this.toast.error('Password did not match. please try again', 'Oops!!');
+    } else {
 	firebase.auth().currentUser.reauthenticateWithCredential(firebase.auth.EmailAuthProvider.credential(firebase.auth().currentUser.email,f.value.password))
-    .then((res)=>{
-      console.log(f.value.password,firebase.auth().currentUser.email)
+    .then((res) => {
+      console.log(f.value.password, firebase.auth().currentUser.email)
 	  user.updatePassword(newPassword).then((res)=> {
       console.log(newPassword);
       console.log(checkPassword);

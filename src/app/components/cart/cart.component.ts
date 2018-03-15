@@ -31,10 +31,7 @@ cart=[];
   	this.authService.getAuth().subscribe(auth=>{
   		this.authUser=auth
   		this.wbService.getUserCartProducts(this.authUser.uid).subscribe((data:any[])=>{
-  			// console.log( data);
-        
   			this.cart = _.values(data);
-  			// console.log(this.cart);
         data.map(obj=>{
           obj.quantity = 1;
           let count = 0;

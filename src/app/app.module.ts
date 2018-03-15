@@ -135,10 +135,9 @@ export const dropzone_config: DropzoneConfigInterface = {
   imports: [
     NguiAutoCompleteModule,
     BrowserModule,
-    // BrowserAnimationsModule,
+  
     FormsModule,
     ToastNoAnimationModule,
-    // TagInputModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     RouterModule.forRoot(appRoutes),

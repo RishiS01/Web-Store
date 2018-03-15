@@ -10,7 +10,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ToastrService } from 'ngx-toastr';
 import { CategoryPipe } from '../../category.pipe';
 import { DropzoneModule, DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
-// import { dropzone_config } from '../../app.module'
+
 import * as Dropzone from 'dropzone';
 import * as _ from 'lodash';
 
@@ -27,7 +27,7 @@ export class AddProductComponent implements OnInit {
 	authUser:User;
   loader:boolean = false;
   
-	// categories:string[]=['electronic', 'footwear', 'books']
+
   categories=[];
    @Input()
     addRemoveLinks:boolean = false;
@@ -61,7 +61,6 @@ export class AddProductComponent implements OnInit {
     let $this = this;
   	this.product.productName=f.value.productName;
   	this.product.productDescription=f.value.productDescription;
-  	// this.product.productCategory=f.value.productCategory;
   	console.log(f.value);
   	this.id = new Date().valueOf();
   	this.product.id = this.id
@@ -80,7 +79,7 @@ export class AddProductComponent implements OnInit {
   }
    
 
-   onRemoveProductImage(img,i,$event){debugger
+   onRemoveProductImage(img,i,$event){
      console.log($event);
    	if(confirm("sure")){
    		const img=this.product.productImage;
@@ -123,15 +122,8 @@ selectCategory(c){
 }
 onItemAdded($event){
     console.log($event);
-    // this.onAddNote(f)
   }
- 
-  onItemRemoved($event,f:NgForm){
+onItemRemoved($event,f:NgForm){
     console.log($event);
-    // if(confirm('Do you really want to remove this tag?')){
-    //   this.onAddNote(f)
-    // }
   }
-
-  
 }

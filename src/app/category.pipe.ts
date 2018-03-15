@@ -8,7 +8,7 @@ import { Product } from '././Models/product';
 export class CategoryPipe implements PipeTransform {
 
   
-   transform(value: any, input: string) {debugger
+   transform(value: any, input: string) {
   if (input) {
     input = input.toLowerCase();
     return value= value.filter(function (el: any) {

@@ -3,7 +3,6 @@ li{
     list-style: none;
  }
 .image-td{
-    /*height: 160px;*/
     overflow: hidden;
 }
 .image-div{
@@ -20,7 +19,6 @@ li{
     position: relative;
     top: 0;
     height: 100vh;
-    /*background-color: #eee;*/
 }
 .sideBar-image{
 

@@ -30,7 +30,6 @@ export class FavouritesComponent implements OnInit {
       this.authUser = auth;
       this.wbService.getUserFavouraite(this.authUser.uid).subscribe((data: any[]) => {
         this.favourite = _.values(data);
-        // console.log(this.favourite.productImage[0]);
         data.map(obj => {
           let count = 0;
           let oldRating = 0;

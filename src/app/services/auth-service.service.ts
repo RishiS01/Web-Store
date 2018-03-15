@@ -41,3 +41,6 @@ export class AuthServiceService {
   	return this.angularFireAuth.auth.signOut();
   }
 }
+
+
+

@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SortPipe implements PipeTransform {
 
-  transform(productPrice: any, product: any): any {debugger
+  transform(productPrice: any, product: any): any {
         productPrice.forEach(function(currentField) {
             var orderType = 'ASC';
 

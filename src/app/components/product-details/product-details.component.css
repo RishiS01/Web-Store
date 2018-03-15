@@ -3,9 +3,7 @@ li{
 }
 .poster{
     display: flex;
-    /*margin: 15px;*/
     height: 360px;
-    /*width: 280px;*/
     overflow: hidden;
 }
 .image-div{
@@ -22,7 +20,6 @@ li{
 .dashboard{
 	position: relative;
     top: 0;
-    /*height: 100vh;*/
 }
 .sideBar-image{
 
@@ -220,13 +217,13 @@ b{
 }
 /***** CSS Magic to Highlight Stars on Hover *****/
 
-.rating > input:checked ~ label, /* show gold star when clicked */
-.rating:not(:checked) > label:hover, /* hover current star */
-.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+.rating > input:checked ~ label, 
+.rating:not(:checked) > label:hover, 
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  }
 
-.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked + label:hover, 
 .rating > input:checked ~ label:hover,
-.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > label:hover ~ input:checked ~ label, 
 .rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
 .rating > label {
     color: #a9a8a8;

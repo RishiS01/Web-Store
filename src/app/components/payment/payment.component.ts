@@ -11,28 +11,30 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-	isLoginUser:string;
-	authUser:User;
-	profile ={} as Profile;
+	isLoginUser: string;
+	authUser: User;
+	profile = {} as Profile;
+	showCashOnDelivery: boolean;
+	showDebitPayment: boolean;
   constructor(
-  	public wbService:WebStoreService,
-  	public authService:AuthServiceService,
-  	public toaster:ToastrService
+  	public wbService: WebStoreService,
+  	public authService: AuthServiceService,
+  	public toaster: ToastrService
   	) { }
 
   ngOnInit() {
-  	this.authService.getAuth().subscribe(auth=>{
-  		this.authUser=auth;
-  		this.isLoginUser=this.authUser.email
-  		this.wbService.getUserProfile(auth.uid).valueChanges().subscribe(data=>{
-      this.profile=data || {} as Profile;
+  	this.authService.getAuth().subscribe(auth => {
+  		this.authUser = auth;
+  		this.isLoginUser = this.authUser.email;
+  		this.wbService.getUserProfile(auth.uid).valueChanges().subscribe(data => {
+      this.profile = data || {} as Profile;
     });
-  	})
+  	});
   }
   makePayment(){
   	this.toaster.success('Payment done successfully');
   }
-  makePaymentonDelivery(){
-  	this.toaster.success('Order placed successfully');
+  makePaymentonDelivery() {
+		this.toaster.success('Order placed successfully');
   }
 }

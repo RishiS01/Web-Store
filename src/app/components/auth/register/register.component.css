@@ -1,0 +1,105 @@
+.registerHeadder{
+	margin-top: -19px;
+    margin-bottom:-2px;
+    color: #ddd;
+}
+.registerBackground{
+	background-image: url(../../../../assets/image/lock.jpg);
+	position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50%;	
+   	filter: brightness(50%);
+}
+.google {
+    color: #dd4b39 !important;
+    margin-bottom: 8px;
+}
+.facebook {
+    color: #006699 !important;
+    margin-bottom: 8px;
+    width: 50px;
+}
+.social{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.card-header{
+    text-align: center;
+    margin: -41px 15px 20px 18px;
+    border-radius: 3px;
+    padding: 15px;
+    background-color: #42a98d;
+    position: relative;
+    box-shadow:6px 5px 15px #9d9d9d;
+}
+.panel-body{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin: 78px 0;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+    border-radius: 6px;
+    color: rgba(0,0,0,.87);
+    background: #fff;
+    padding:8px;
+}
+.registerForm{
+    padding: 12px;
+}
+h5{
+    text-align: center;
+    color: #999;
+}
+h4{
+    text-align: center;
+    margin-top: 25px;
+}
+.emailButton{
+    text-align: center;
+    margin-bottom: 10px;
+    color: #42a98d;
+}
+.form-control {
+  border: 0;
+  background-image: linear-gradient( #9c27b0, #9c27b0), linear-gradient(#D2D2D2, #D2D2D2);
+  background-size: 0 2px, 100% 1px;
+  background-repeat: no-repeat;
+  background-position: center bottom, center calc(100% - 1px);
+  background-color: rgba(0, 0, 0, 0);
+  transition: background 0s ease-out;
+  float: none;
+  box-shadow: none;
+  border-radius: 0;
+  font-weight: 400;
+  
+  }
+.form-control:focus { 
+   outline: none;
+   background-image: linear-gradient( #55d4af, #55d4af), linear-gradient(#D2D2D2, #D2D2D2);
+   background-size: 100% 2px,100% 1px;
+   box-shadow: none;
+   transition: 0.5s;
+}
+.input-group-addon{
+    border:none;
+    background-color: transparent;
+}
+.button:focus { 
+  outline: none;
+  color: #42a98d
+ }
+ .btn-link{
+  color: #42a98d
+ }
+ .register{
+  /* display: flex; */
+  align-items: center;
+  height: 70vh;
+  margin-top: 35px;
+}

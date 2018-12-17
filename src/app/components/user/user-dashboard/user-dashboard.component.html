@@ -1,0 +1,141 @@
+<div class="container-fluid dashboard">
+  <div class="navBar">
+    <app-nav></app-nav>
+  </div>
+  <div class="row">
+    <div class="container">
+      
+      <div class="main-content">
+          <!-- col-xs-12 col-sm-5 -->
+        <div class=" col-md-3 col-xs-12 sidebar"> 
+          <div class="side-menu">
+            <div class="sidebar-header toggle-btn dropdown-toggle" data-toggle="collapse" data-target="#dropdownMenu" >
+              <span (click) = "toggleDropdown()">Filter
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </div>
+            <div id="dropdownMenu" *ngIf = "showDropdown">
+              <div id="dropdown">
+                <li data-toggle="collapse" data-target="#new" class="collapsed">
+                  <a href="#">
+                    <span class="menu-heading"> Category </span>
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <ul class="sub-menu collapse" id="new">
+                  <a href="" *ngFor='let cat of categories' [routerLink]='["/category/"+cat.name]'>
+                    <li>
+                      <h5 class="category-list">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        {{cat.name}}</h5>
+                    </li>
+                  </a>
+                </ul>
+                <li class="collapsed" data-toggle="collapse" data-target="#sort">
+                  <a href="#">
+                    <span class="menu-heading">Sort By </span>
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <ul class="sub-menu collapse" id="sort">
+                  <a>
+                    <li>
+                      <h5 class="category-list" (click)="sortPopular()">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        Popularity</h5>
+                    </li>
+                    <li>
+                      <h5 class="category-list" (click) = "sortLowProduct()">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        Price Low to High</h5>
+                    </li>
+                    <li>
+                      <h5 class="category-list" (click) = "sortHighProduct()">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        Price High to Low</h5>
+                    </li>
+                  </a>
+                </ul>
+                <li class="collapsed" data-toggle="collapse" data-target="#account" *ngIf="profile.role !=='admin'">
+                  <a href="#">
+                    <span class="menu-heading">My Account </span>
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <ul class="sub-menu collapse" id="account">
+                  <a>
+                    <li>
+                      <h5 class="favourite-list" routerLink='/favorite'>
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        Wishlist</h5>
+                    </li>
+                    <li>
+                      <h5 class="cart-list" routerLink='/cart'>
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        Cart</h5>
+                    </li>
+                    <li>
+                      <h5 class="profile-list" routerLink='/user-profile'>
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        My Profile </h5>
+                    </li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <app-menu></app-menu> -->
+        <div class="col-md-12 col-lg-9 col-xs-12 container main-container">
+          <div class="row">
+            <div *ngFor="let product of product let i = index " class=" col-md-4 col-lg-3 col-sm-6 dd">
+              <div class="card">
+                <div (click)='toggleFavourite(product)'>
+                  <span>
+                    <i class="glyphicon glyphicon-heart favourite pull-right" [ngClass]="{active:product.userFavourite === true}"></i>
+                  </span>
+                </div>
+                <div class="panel-body" [routerLink]="['/product-detail/'+product.key]">
+                  <div class="card-image">
+                    <img src="{{product.productImage[0]}}">
+                  </div>
+                  <div class="product-name">
+                    <span>
+                      <h4>
+                        <p>{{product.productName}}</p>
+                      </h4>
+                    </span>
+                  </div>
+                  <div class="product-review col-md-12">
+                    <span class="col-md-6">
+                      <span class="btn btn-success fa fa-star">
+                        <b> {{product.rating | number: '1.1-1'}}</b>
+                      </span>
+                    </span>
+
+                  </div>
+                  <div class="col-md-12 ">
+                    <span class="col-md-6">
+                      <span class="product-price">{{product.productPrice | currency:"INR" : true :'1.0-2'}}</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sk-cube-grid" *ngIf="loader">
+    <div class="sk-cube sk-cube1"></div>
+    <div class="sk-cube sk-cube2"></div>
+    <div class="sk-cube sk-cube3"></div>
+    <div class="sk-cube sk-cube4"></div>
+    <div class="sk-cube sk-cube5"></div>
+    <div class="sk-cube sk-cube6"></div>
+    <div class="sk-cube sk-cube7"></div>
+    <div class="sk-cube sk-cube8"></div>
+    <div class="sk-cube sk-cube9"></div>
+  </div>
+</div>

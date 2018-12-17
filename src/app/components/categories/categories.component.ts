@@ -18,6 +18,7 @@ export class CategoriesComponent implements OnInit {
   product = [];
   name: string;
   Authuser: User;
+  showDropdown:boolean = false;
 
   constructor(
     public wbService: WebStoreService,
@@ -40,13 +41,17 @@ export class CategoriesComponent implements OnInit {
 
   }
 
+  toggleDropdown(){
+    this.showDropdown =!this.showDropdown;
+  }
+
   getProductDetails() {
     this.wbService.getProductsByCategory().subscribe((data: any[]) => {
       data.map(obj => {
         let count = 0;
         let oldRating = 0;
         if (typeof obj.reviews !== typeof undefined) {
-          Object.values(obj.reviews).forEach(key => {
+          Object.values(obj.reviews).forEach((key:any) => {
             if (key.rating) {
               const rat = Number(key.rating);
               oldRating = oldRating + rat;

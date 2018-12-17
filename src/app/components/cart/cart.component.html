@@ -4,8 +4,8 @@
 	</div>
 	<div class="row">
 
-		<div class="col-md-9 col-md-offset-2 main-content">
-			<div class="col-md-10 col-md-offset-1">
+		<div class="col-md-12 main-content">
+			<!-- <div class="col-md-10 col-md-offset-1"> -->
 				<div class="product-table">
 					<div class="card product-card">
 						<div class="card-header">
@@ -58,23 +58,23 @@
 								</tbody>
 							</table>
 							<div class="panel-footer col-md-12">
-								<div class="col-md-2">
+								<div class="col-md-2 col-xs-6 ">
 									<button routerLink='' class="btn btn-default backToMain">
 										<i class="fa fa-long-arrow-left" aria-hidden="true"></i> Continue Shopping</button>
 								</div>
 
-								<div class="col-md-2 pull-right ">
+								<div class="col-md-2  col-xs-6 pull-right check-out-button">
 									<button class="btn btn-default checkOutCart" routerLink='/delivery'>
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i> Check Out</button>
 								</div>
-								<div class="col-md-2 pull-right total-amount">
+								<div class="col-md-2 col-xs-12 pull-right total-amount">
 									<span> Amount Payable : {{total | currency:"INR" : true :'1.0-2'}}</span>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			<!-- </div> -->
 		</div>
 	</div>
 </div>

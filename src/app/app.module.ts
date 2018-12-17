@@ -6,25 +6,25 @@ import { NguiAutoCompleteModule } from '@ngui/auto-complete';
 
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
-import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
-import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
+import { UserDashboardComponent } from './components/user/user-dashboard/user-dashboard.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { CartComponent } from './components/cart/cart.component';
-import { FavouritesComponent } from './components/favourites/favourites.component';
+import { FavouritesComponent } from './components/user/favourites/favourites.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ProductDetailsComponent } from './components/user/product-details/product-details.component';
 import { DeliveryComponent } from './components/delivery/delivery.component';
 import { PaymentComponent } from './components/payment/payment.component';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
-import { ChangePasswordComponent } from './components/change-password/change-password.component';
-import { RegisterComponent } from './components/register/register.component';
-import { AddProductComponent } from './components/add-product/add-product.component';
+import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
+import { ChangePasswordComponent } from './components/user/change-password/change-password.component';
+import { RegisterComponent } from './components/auth/register/register.component';
+import { AddProductComponent } from './components/admin/add-product/add-product.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { NavComponent } from './components/nav/nav.component';
-import { EditProductComponent } from './components/edit-product/edit-product.component';
-import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
-import { AdminUpdatePasswordComponent } from './components/admin-update-password/admin-update-password.component';
+import { EditProductComponent } from './components/admin/edit-product/edit-product.component';
+import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
+import { AdminUpdatePasswordComponent } from './components/admin//admin-update-password/admin-update-password.component';
 
 
 import { AuthServiceService } from './services/auth-service.service';
@@ -33,7 +33,6 @@ import { AuthGuard } from './guards/auth.guard';
           // firebase import
 
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 
@@ -56,8 +55,9 @@ import {
 import {ToastModule} from 'ng2-toastr/ng2-toastr';
 
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { SortPipe } from './sort.pipe';
+import { MenuComponent } from './components/menu/menu.component';
 
 
 
@@ -130,7 +130,8 @@ export const dropzone_config: DropzoneConfigInterface = {
     CategoryPipe,
     SortPipe,
     AdminProfileComponent,
-    AdminUpdatePasswordComponent
+    AdminUpdatePasswordComponent,
+    MenuComponent
   ],
   imports: [
     NguiAutoCompleteModule,
@@ -138,12 +139,11 @@ export const dropzone_config: DropzoneConfigInterface = {
   
     FormsModule,
     ToastNoAnimationModule,
-    BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     RouterModule.forRoot(appRoutes),
      DropzoneModule.forRoot(dropzone_config),
     ToastrModule.forRoot({
-      timeOut: 3000,
+      timeOut: 2000,
       positionClass: 'toast-top-right',
       preventDuplicates: true,
       toastComponent: ToastNoAnimation,

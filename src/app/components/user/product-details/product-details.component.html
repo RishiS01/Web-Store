@@ -1,0 +1,112 @@
+<div class="container-fluid dashboard">
+	<div class="navBar">
+	<app-nav></app-nav>
+</div>
+<div class="row ">
+	<div class=" col-md-12 main-content">
+		<div class="container">
+
+		<div class="well well-lg product-detail">
+			
+			<div class="row">
+				<div class=" col-md-6" >
+					<div class="poster">
+						<div class="image-div">
+							<img [src]="image | img" alt="Poster" class="title panel-body img-responsive" >
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 ">
+					<div class="product-details panel-body">
+					<div><h1>{{product.productName}}</h1></div>
+					<div class="col-md-6 review-product" >
+    					<h4><a (click) = "showReviewInput = !showReviewInput"><i class="fa fa-star-o" aria-hidden="true"></i> {{review.length}} Reviews </a></h4>
+    				</div>
+    				<div class="col-md-6">
+    					<h4><a (click) = "showInput = !showInput"><small class="btn btn-success fa fa-star"><b> {{rating | number: '1.1-1'}}</b></small> Ratings </a></h4>
+    				</div>
+    				<div class="col-md-12">
+					<div class="panel-footer ">
+						<div class="product-price"><b>{{product.productPrice | currency:"INR" : true}}</b></div>
+						<div class="description">
+							<span>Description:</span>
+							<div class="product-description col-md-12">{{product.productDescription}}</div>
+						</div>
+					</div>
+					</div>
+					<div class="row">
+					
+				</div>
+				</div>
+				</div>
+			</div>
+			
+			<div class="row ">
+				<div class="col-md-12 panel-body">
+					<div class=" panel-footer col-md-6">
+						<div >
+					<div *ngFor = 'let img of product.productImage; let i=index ' class="product">
+						
+						<div class=" product-image " *ngIf='product.productImage' >
+							<img [src]="img | img" (click)=displayImage(img,i)>
+						</div>
+					</div>
+					</div>
+					
+				</div>
+				<div class="col-md-6">
+						<div class="action-buttons">
+						<button class="btn btn-lg addToCart" (click)='addProductToCart(product)'><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart </button>
+						<button class="btn btn-lg buyItem" routerLink='/delivery'><i class="fa fa-buysellads fa-rotate-90" aria-hidden="true"></i> Buy Now </button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="well well-sm user-review col-md-12">
+		<div>
+    		<form  #f='ngForm'(ngSubmit)=onSubmitUserReview(f) *ngIf='showReviewInput'>
+    			<div class="form-group">
+    				<div class="col-md-5">
+    					<span class="rating" >
+   							<input type="radio" id="star5" name="userrating" value="5" [(ngModel)]='userrating'/><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+						    <!-- <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label> -->
+						    <input type="radio" id="star4" name="userrating" value="4" [(ngModel)]='userrating'/><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+						   
+						    <input type="radio" id="star3" name="userrating" value="3" [(ngModel)]='userrating'/><label class = "full" for="star3" title="Meh - 3 stars"></label>
+						    
+						    <input type="radio" id="star2" name="userrating" value="2" [(ngModel)]='userrating'/><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+						   
+						    <input type="radio" id="star1" name="userrating" value="1" [(ngModel)]='userrating'/><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+	
+						</span>
+						<input type="text" name="userReview" class="form-control" placeholder="Review Product.." [(ngModel)]='userReview'>
+    					<div class=" review-button">
+    				<button  type="submit" class="btn btn-success">Submit</button>
+    			</div> 
+    				</div>
+    			</div>
+    		</form>
+    
+    	<div class="col-md-12" >
+    		<h4>User Comments:</h4>
+    		<ul >
+    			<li *ngFor="let rev of review ; let i= index "> 
+    				<h5 class="user-comment">
+    					<p>
+    						<span class="btn btn-warning fa fa-star"> 
+    							<small class="rating-font">{{rev.rating}}</small>
+    						</span>
+    						<div class="review">{{rev.review}}</div>
+    						<span class="userEmail"> <small class="user-name">By</small> <i class="fa fa-user" aria-hidden="true"></i> {{rev.email}}  </span>
+    						<span *ngIf='Authuser'><span *ngIf='Authuser.uid === rev.id ' class="glyphicon glyphicon-remove pull-right remove" (click)='onDeleteReviewC(rev,i)'></span>
+    					</span>
+    							
+    				</h5>
+    			</li>
+    		</ul> 
+    	</div>
+	</div>
+	</div>
+</div>
+</div>

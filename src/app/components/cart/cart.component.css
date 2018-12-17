@@ -194,4 +194,10 @@ button:focus {
         margin-top: 5px;
         padding: 20px 13px;
     }
+    .check-out-button{
+        float: none !important;
+    }
+    .total-amount{
+        float: none !important;
+    }
 }

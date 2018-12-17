@@ -1,0 +1,123 @@
+<div class="container-fluid dashboard">
+	<div class="navBar">
+		<app-nav></app-nav>
+	</div>
+	<div class="row">
+        <div class="sideBar col-md-3">
+			<div id="Sidemenu">
+			<app-side-bar></app-side-bar>
+			<div class="sideBar-image"></div>
+			</div>
+		</div>
+	<div class="col-md-12 main-content">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 userProfile">
+					<div class="panel-heading"><h4><i class="fa fa-user " aria-hidden="true"></i> Admin Profile</h4></div>
+					<div>
+						<div class="panel-body">
+							<form #f = 'ngForm' (submit) = "createAdminProfile(f)" >
+								<div class="row">
+									<div class="form-group col-md-12">
+										<label for="company" >Company: <span class="tx-danger">*</span></label>
+										<input  type="text"  name="company" class="form-control" required placeholder="Company" [(ngModel)]='profile.company' #company='ngModel'>
+							
+									<div *ngIf='company?.errors?.required && company?.touched' class="alert alert-danger">
+											Companay Required
+									</div>
+									</div>
+									<div class="form-group col-md-6">
+										<label for="firstName" >First Name: <span class="tx-danger">*</span></label>
+										<input type="text"  name="firstName" class="form-control" required placeholder="FirstName"  [(ngModel)]='profile.firstName' minlength="3" #firstName='ngModel'>
+									<div *ngIf='firstName?.errors?.required && firstName?.touched' class="alert alert-danger">
+											First name Required
+									</div>
+									
+									<div *ngIf='firstName?.errors?.minlength && firstName?.touched' class=" alert alert-danger">
+											Must be minimum 3 characters
+									</div>
+									</div>
+									<div class="form-group col-md-6">
+										<label for="lastName" >Last Name: <span class="tx-danger">*</span></label>
+										<input type="text"  name="lastName" class="form-control" required placeholder="LastName"  [(ngModel)]='profile.lastName' minlength="3" #lastName='ngModel'>
+									<div *ngIf='lastName?.errors?.required && lastName?.touched' class="alert alert-danger">
+											Last name Required
+									</div>
+						
+									<div *ngIf='lastName?.errors?.minlength && lastName?.touched' class="alert alert-danger">
+											Must be minimum 3 characters
+									</div>
+									</div>
+									<div class="form-group col-md-6">
+										<label for="phone" >Contact No: <span class="tx-danger">*</span></label>
+										<input type="text"  name="phone" class="form-control" required placeholder="Contact Number"  [(ngModel)]='profile.phone' minlength="10" #phone='ngModel' maxlength="10" pattern="[0-9]*" >
+									
+									<div [hidden]="phone.valid || phone.pristine"
+      										class="alert alert-danger">
+      										<div [hidden]="!phone.hasError('minlength')">phone should be 10digit</div>
+      										<div [hidden]="!phone.hasError('required')">phone is required</div>
+      										<div [hidden]="!phone.hasError('touched')">phone is required</div>
+      										<div [hidden]="!phone.hasError('pattern')">phone numberr should be only numbers</div>
+									</div>
+									</div>
+									<div class="form-group col-md-6">
+										<label for="email" >Email: <span class="tx-danger">*</span></label>
+										<input type="email"  name="email" class="form-control" required placeholder="email" [(ngModel)]='profile.email' #email='ngModel' pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" >
+									
+									<div *ngIf='email?.errors?.required && email?.touched' class="alert alert-danger">
+											Email Required
+									</div>
+									<div [hidden]="email.valid || email.pristine"
+   										class="alert alert-danger">
+  	 									<div [hidden]="!email.hasError('required')">Email is required</div>
+   										<div [hidden]="!email.hasError('pattern')">Email format should be 
+      									<small><b>joe@abc.com</b></small>
+   									</div>
+									</div>
+									</div>
+									<div class="form-group col-md-12">
+										<label for="address" >Address: <span class="tx-danger">*</span></label>
+										<textarea  type="text"  name="companey" class="form-control" required placeholder="Address" [(ngModel)]='profile.address' #address='ngModel'></textarea>
+							
+									<div *ngIf='address?.errors?.required && address?.touched' class="alert alert-danger">
+											Address Required
+									</div>
+									</div>
+									<div class="form-group col-md-4">
+										<label for="city" >City: <span class="tx-danger">*</span></label>
+										<input type="text"  name="city" class="form-control" required placeholder="city" [(ngModel)]='profile.city' #city='ngModel'>
+									
+									<div *ngIf='city?.errors?.required && city?.touched' class="alert alert-danger">
+											City Required
+									</div>
+									</div>
+									<div class="form-group col-md-4">
+										<label for="country" >Country: <span class="tx-danger">*</span></label>
+										<input type="text"  name="country" class="form-control" required placeholder="country" [(ngModel)]='profile.country' #country='ngModel'>
+									
+									<div *ngIf='country?.errors?.required && country?.touched' class="alert alert-danger">
+											Country Required
+									</div>
+									</div>
+									<div class="form-group col-md-4">
+										<label for="postal code" >Postal Code: <span class="tx-danger">*</span></label>
+										<input type="number"  name="postalCode" class="form-control" required placeholder="POSTAL CODE" [(ngModel)]='profile.postalCode' #postalCode='ngModel' >
+									
+									<div *ngIf='postalCode?.errors?.required && postalCode?.touched' class="alert alert-danger">
+											Postal Code Required
+									</div>
+									</div>
+									<div class="col-md-12 button">
+										<button class="btn btn-default pull-right updateButton" type="submit" [disabled]=f.invalid>Update Profile</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>

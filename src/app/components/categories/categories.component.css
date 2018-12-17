@@ -145,28 +145,36 @@ border-bottom: 1px solid #ddd;
   background-color: #e6e6e6;
 }
 @media only screen and (max-width:768px) {
-  .side-menu{
-    width: auto;
+  .side-menu {
+    /* width: auto;
     float: right;
+    display: block; */
+    z-index: 999999;
+    position: absolute;
+    background: #ffffff;
+    padding: 3px;
+    border: 1px solid #dedede;
+    text-align: justify;
+    top: 9%;
+    left: 24px;
+  }
+  .sidebar {
+    /* width: auto; */
+    float: right;
+    position: absolute;
     display: block;
   }
-  .sidebar{
-    width: auto;
-    float: right;
-    /*position: absolute;*/
-    display: block;
-  }
-  .product-container{
+  .product-container {
     height: auto;
     display: block;
   }
-  .toggle-btn{
-  display: block;
-
-}
-.main-container{
- position: absolute;
- padding:0px;
+  .toggle-btn {
+    display: block;
+  }
+.main-container {
+  /* position: absolute; */
+  padding: 0px;
+  text-align: center;
 }
 
 }

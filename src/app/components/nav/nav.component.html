@@ -2,13 +2,13 @@
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Web Store</a>
-            <ul class="nav navbar-nav pull-right visible-xs hidden-md small-dropdown">
+            <ul class="nav navbar-nav pull-right visible-xs  hidden-md small-dropdown">
                 <li *ngIf="!isLoggedIn"><a href="" routerLink = '/login' class="navLink" style="padding-right:28px"><i class="fa fa-sign-in "></i> Login</a></li>
                     <li *ngIf="isLoggedIn" class="dropdown"><a href="" class="dropdown-toggle" data-toggle='dropdown'><i class="fa fa-user " aria-hidden="true"></i>
                         {{isLoginUser}}<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li *ngIf="profile.role !=='guest'"><a href="" routerLink='/admin-dashboard'><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
-                            <li *ngIf="profile.role !=='guest'"><a href="" routerLink='/add-product'><i class="fa fa-plus-circle" aria-hidden="true"></i> Add_Product</a></li>
+                            <li  *ngIf="profile.role !=='guest'" ><a href="" routerLink='/add-product'><i class="fa fa-plus-circle" aria-hidden="true"></i> Add_Product</a></li>
                             <li ><a href=""  *ngIf = "profile.role ==='guest'" routerLink = '/user-profile'><i class="fa fa-user " aria-hidden="true"></i> Profile</a></li>
                             <li ><a href="" *ngIf = "profile.role !=='guest'" routerLink = '/admin-profile'><i class="fa fa-user " aria-hidden="true"></i> Profile</a></li>
                             <li *ngIf = "profile.role ==='guest'"><a href="" routerLink = '/favorite'><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</a></li>

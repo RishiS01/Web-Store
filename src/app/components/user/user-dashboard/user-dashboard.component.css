@@ -314,7 +314,19 @@ a {
 @media only screen and (max-width: 1024px) {
   .main-container{
     border: none;
+    margin-top: 30px;
   }
+  .side-menu{
+    z-index: 999999;
+    position: absolute;
+    background: #ffffff;
+    padding: 3px;
+    border: 1px solid #dedede;
+    text-align: justify;
+    /* top: 5%; */
+    left: 0;
+  }
+
 }
 @media only screen and (max-width: 768px) {
   .side-menu {

@@ -123,9 +123,6 @@ span.icon-bar {
     background-color: black;
 }
 @media all and (max-width: 768px){
-    .sideBar{
-      
-    }
     .main-content{
     height: auto;
     min-height: 100%;
@@ -154,5 +151,46 @@ span.icon-bar {
   .dropdownMenu{
     display: none;
   }
-}   
+
+}  
+@media only screen 
+  and (max-width: 1024px) 
+   {
+    .sideBar{
+        height: auto;
+        border-right: 0px solid #f0f0f0;
+        margin: 0 auto;
+        transition: 0.3s;
+        display: none;
+    }
+}
+ /* @media only screen 
+  and (min-width: 1024px) 
+  and (max-height: 1366px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+
+    .sideBar{
+        margin: 0 auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        overflow: auto;
+        height: 100vh;
+    }
+} 
+ @media (min-width: 768px) and (max-width: 1024px) {
+  
+    .sideBar{
+        margin: 0 auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        overflow: auto;
+        height: 100vh;
+    }
+    
+  }  */
 

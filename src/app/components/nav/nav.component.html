@@ -29,6 +29,7 @@
                                 {{isLoginUser}}<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li *ngIf="profile.role !=='guest'"><a href="" routerLink='/admin-dashboard'><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
+                                <li  *ngIf="profile.role !=='guest'" ><a href="" routerLink='/add-product'><i class="fa fa-plus-circle" aria-hidden="true"></i> Add_Product</a></li>
                                 <li ><a href=""  *ngIf = "profile.role ==='guest'" routerLink = '/user-profile'><i class="fa fa-user " aria-hidden="true"></i> Profile</a></li>
                                 <li ><a href=""  *ngIf = "profile.role !=='guest'" routerLink = '/admin-profile'><i class="fa fa-user " aria-hidden="true"></i> Profile</a></li>
                                 <li *ngIf = "profile.role ==='guest'"><a href="" routerLink = '/favorite'><i class="fa fa-heart" aria-hidden="true"></i> Wishlist</a></li>
